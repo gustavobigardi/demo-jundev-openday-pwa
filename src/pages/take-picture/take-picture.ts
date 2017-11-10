@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ViewController, NavController, ModalController } from 'ionic-angular';
 import { SendPhotoPage } from '../send-photo/send-photo';
+import { normalizeURL } from 'ionic-angular';
 
 @Component({
     selector: 'page-take-picture',
