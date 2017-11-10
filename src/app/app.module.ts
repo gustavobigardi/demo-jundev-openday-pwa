@@ -1,40 +1,68 @@
-import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
-
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
-
-import { StatusBar } from '@ionic-native/status-bar';
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
+import { PhotosPage } from '../pages/photos/photos';
+import { SendPhotoPage } from '../pages/send-photo/send-photo';
+import { ProfilePage } from '../pages/profile/profile';
+import { TakePicturePage } from '../pages/take-picture/take-picture';
+import { ShowMapPage } from '../pages/show-map/show-map';
+
+export const environment = {
+  firebase: {
+    apiKey: "AIzaSyDX3gPu7lf955m1NXCIFiL-fRYTeMuUsOA",
+    authDomain: "fir-jundevelopers.firebaseapp.com",
+    databaseURL: "https://fir-jundevelopers.firebaseio.com",
+    projectId: "fir-jundevelopers",
+    storageBucket: "fir-jundevelopers.appspot.com",
+    messagingSenderId: "446338752007"
+  }
+};
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage
+    LoginPage,
+    SignupPage,
+    PhotosPage,
+    SendPhotoPage,
+    ProfilePage,
+    TakePicturePage,
+    ShowMapPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage
+    LoginPage,
+    SignupPage,
+    PhotosPage,
+    SendPhotoPage,
+    ProfilePage,
+    TakePicturePage,
+    ShowMapPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
