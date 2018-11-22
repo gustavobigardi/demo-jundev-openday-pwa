@@ -30,7 +30,7 @@
         "cordova-plugin-compat": "^1.2.0",
         "cordova-plugin-console": "^1.1.0",
         "cordova-plugin-device": "^1.1.6",
-        "cordova-plugin-ionic-webview": "^1.1.16",
+        "cordova-plugin-ionic-webview": "^2.2.5",
         "cordova-plugin-ios-camera-permissions": "^1.2.0",
         "cordova-plugin-splashscreen": "^4.0.3",
         "cordova-plugin-statusbar": "^2.2.3",
